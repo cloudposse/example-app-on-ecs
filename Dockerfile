@@ -31,4 +31,5 @@ COPY rootfs/ /
 COPY --from=builder /src/example-app /app/
 
 # Define the entrypoint
-ENTRYPOINT ["./example-app"]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["./example-app"]
