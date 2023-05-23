@@ -14,6 +14,8 @@ FROM alpine:3.17 as final
 ADD https://apk.cloudposse.com/ops@cloudposse.com.rsa.pub /etc/apk/keys/
 RUN echo "@cloudposse https://apk.cloudposse.com/3.11/vendor" >> /etc/apk/repositories
 
+RUN apk add --no-cache bash
+
 # Expose port of the app
 EXPOSE 8080
 
