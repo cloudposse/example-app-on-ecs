@@ -13,6 +13,8 @@ jobs:
     with:
       organization: "${{ github.event.repository.owner.login }}"
       repository: "${{ github.event.repository.name }}"
+      enable-migration: true
+      support-rollback: true
     secrets:
       github-private-actions-pat: "${{ secrets.PUBLIC_AND_PRIVATE_REPO_ACCESS_TOKEN_REPO }}"
       registry: "${{ secrets.ECR_REGISTRY }}"
