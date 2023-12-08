@@ -19,7 +19,7 @@ name: |-
     
     jobs:
       do:
-        uses: cloudposse/github-actions-workflows-docker-ecr-eks-helmfile/.github/workflows/hotfix-release.yml@main
+        uses: ./.github/workflows/ecspresso-hotfix-release.yml
         with:
           organization: "$\{\{ github.event.repository.owner.login \}\}"
           repository: "$\{\{ github.event.repository.name \}\}"

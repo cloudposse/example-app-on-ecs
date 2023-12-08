@@ -13,7 +13,7 @@ name: |-
 
     jobs:
       do:
-        uses: cloudposse/github-action-workflows/.github/workflows/controller-hotfix-reintegrate.yml@main
+        uses: ./.github/workflows/workflow-controller-hotfix-reintegrate.yml
         with:
           ref: $\{\{ github.ref \}\}
           target_branch: main

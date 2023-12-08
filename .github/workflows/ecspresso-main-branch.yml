@@ -19,7 +19,7 @@ name: |-
     
     jobs:
       do:
-        uses: ./.github/workflows/main-branch.yml@main
+        uses: ./.github/workflows/ecspresso-main-branch.yml
         with:
           organization: "$\{\{ github.event.repository.owner.login }}"
           repository: "$\{\{ github.event.repository.name }}"

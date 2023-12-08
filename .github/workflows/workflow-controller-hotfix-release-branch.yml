@@ -13,7 +13,7 @@ name: |-
 
     jobs:
       do:
-        uses: cloudposse/github-action-workflows/.github/workflows/controller-hotfix-release-branch.yml@main
+        uses: ./.github/workflows/workflow-controller-hotfix-release-branch.yml
         with:
           version: $\{\{ github.event.release.tag_name \}\}
   ```  

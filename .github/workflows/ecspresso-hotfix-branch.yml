@@ -22,7 +22,7 @@ name: |-
     
     jobs:
       do:
-        uses: cloudposse/github-actions-workflows-docker-ecr-spacelift/.github/workflows/hotfix-branch.yml@main
+        uses: ./.github/workflows/ecspresso-hotfix-branch.yml
         with:
           organization: "$\{\{ github.event.repository.owner.login \}\}"
           repository: "$\{\{ github.event.repository.name \}\}"
@@ -30,7 +30,7 @@ name: |-
           labels: $\{\{ toJSON(github.event.pull_request.labels.*.name) \}\}
           ref: $\{\{ github.event.pull_request.head.ref  \}\}
         secrets:
-          github-private-actions-pat: "$\{\{ secrets.PUBLIC_REPO_ACCESS_TOKEN \}\}"
+          github-private-actions-pat: "$\{\{ secrets.PUBLIC_AND_PRIVATE_REPO_ACCESS_TOKEN_REPO \}\}"
           registry: "$\{\{ secrets.ECR_REGISTRY \}\}"
           secret-outputs-passphrase: "$\{\{ secrets.GHA_SECRET_OUTPUT_PASSPHRASE \}\}"
           ecr-region: "$\{\{ secrets.ECR_REGION \}\}"

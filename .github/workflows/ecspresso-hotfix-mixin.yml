@@ -20,7 +20,7 @@ name: |-
     jobs:
       hotfix:
         name: release / branch
-        uses: cloudposse/github-actions-workflows-docker-ecr-eks-helmfile/.github/workflows/hotfix-mixin.yml@main
+        uses: ./.github/workflows/ecspresso-hotfix-mixin.yml
         with:
           version: $\{\{ github.event.release.tag_name \}\}
   ```
@@ -31,7 +31,7 @@ name: |-
     jobs:
       hotfix:
         name: release / branch
-        uses: cloudposse/github-actions-workflows-docker-ecr-eks-helmfile/.github/workflows/hotfix-mixin.yml@main
+        uses: ./.github/workflows/ecspresso-hotfix-mixin.yml
         with:
           version: $\{\{ github.event.release.tag_name \}\}  
   ```

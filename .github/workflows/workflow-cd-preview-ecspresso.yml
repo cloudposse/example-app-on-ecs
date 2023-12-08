@@ -14,7 +14,7 @@ name: |-
   
     jobs:
       cd:
-        uses: cloudposse/github-actions-workflows/.github/workflows/cd-preview-ecspresso.yml@main
+        uses: ./.github/workflows/workflow-cd-preview-ecspresso.yml
         if: $\{\{ always() \}\}
         with:
           image: registry.hub.docker.com/library/nginx
