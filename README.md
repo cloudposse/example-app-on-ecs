@@ -60,7 +60,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 
 
-The workflows included with this example are consolidated to this single repository and are intentionally not divided into [GitHub reusable workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows). We've done this to better demo a single example and simplify development overhead. However, in practice an organization may have many application repositories that use the same workflows. In that case, we recommend moving the reusable workflows into separate repositories, where they can be shared across application repositories from a central point. In this example move all `eks-argocd-*` and all `workflow-*` workflow files to the reusable location, such as a new repository called `github-action-workflows`.
+The workflows included with this example are consolidated to this single repository and are intentionally not divided into [GitHub reusable workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows). We've done this to better demo a single example and simplify development overhead. However, in practice an organization may have many application repositories that use the same workflows. In that case, we recommend moving the reusable workflows into separate repositories, where they can be shared across application repositories from a central point. In this example move all `ecspresso-*` and all `workflow-*` workflow files to the reusable location, such as a new repository called `github-action-workflows`.
 
 ```console
 .github
