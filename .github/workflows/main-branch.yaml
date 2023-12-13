@@ -1,7 +1,7 @@
 name: Main Branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 permissions:
   contents: write
@@ -9,12 +9,10 @@ permissions:
 
 jobs:
   do:
-    uses: cloudposse/github-actions-workflows-docker-ecr-ecspresso/.github/workflows/main-branch.yml@main
+    uses: ./.github/workflows/ecspresso-main-branch.yml
     with:
       organization: "${{ github.event.repository.owner.login }}"
       repository: "${{ github.event.repository.name }}"
-      enable-migration: true
-      support-rollback: true
     secrets:
       github-private-actions-pat: "${{ secrets.PUBLIC_AND_PRIVATE_REPO_ACCESS_TOKEN_REPO }}"
       registry: "${{ secrets.ECR_REGISTRY }}"

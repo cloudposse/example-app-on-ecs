@@ -13,7 +13,7 @@ tags:
   - github-action
   - Docker
   - ECR
-  - Spacelift
+  - ECS
   - CI/CD
 
 # Logo for this project
@@ -41,14 +41,43 @@ related:
 
 # Short description of this project
 description: |-
-  Example Dockerized application deployed with Spacelift on ECS.
+  Example Dockerized application deployed on ECS.
 
-introduction: |- 
+usage: |-
+  The workflows included with this example are consolidated to this single repository and are intentionally not divided into [GitHub reusable workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows). We've done this to better demo a single example and simplify development overhead. However, in practice an organization may have many application repositories that use the same workflows. In that case, we recommend moving the reusable workflows into separate repositories, where they can be shared across application repositories from a central point. In this example move all `ecspresso-*` and all `workflow-*` workflow files to the reusable location, such as a new repository called `github-action-workflows`.
+
+  ```console
+  .github
+  ├── configs/
+  │ ├── draft-release.yml
+  │ └── environment.yaml
+  └── workflows/
+    ├── ecspresso-feature-branch.yml
+    ├── ecspresso-hotfix-branch.yml
+    ├── ecspresso-hotfix-mixin.yml
+    ├── ecspresso-hotfix-release.yml
+    ├── ecspresso-main-branch.yml
+    ├── ecspresso-release.yml
+    ├── feature-branch.yml
+    ├── main-branch.yaml
+    ├── release.yaml
+    ├── workflow-cd-ecspresso.yml
+    ├── workflow-cd-preview-ecspresso.yml
+    ├── workflow-ci-dockerized-app-build.yml
+    ├── workflow-ci-dockerized-app-promote.yml
+    ├── workflow-controller-draft-release.yml
+    ├── workflow-controller-hotfix-reintegrate.yml
+    ├── workflow-controller-hotfix-release-branch.yml
+    └── workflow-controller-hotfix-release.yml
+  ```
+introduction: |-
   * [Docker](https://docs.docker.com/engine/reference/builder/) for developing, shipping, and running,
   * [ECR](https://aws.amazon.com/ecr/) to store the Docker images
-  * [Spacelift](https://spacelift.io/) as CD platform 
+  * [ECS](https://aws.amazon.com/ecs/) as the container orchestration platform
 
 # Contributors to this project
 contributors:
   - name: "Igor Rodionov"
     github: "goruha"
+  - name: "Benjamin Smith"
+    github: "Benbentwo"
