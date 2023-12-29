@@ -114,7 +114,7 @@ permissions:
 jobs:
   preview:
     name: preview // controller
-    runs-on: ["self-hosted"]
+    runs-on: ["ubuntu-latest"]
     steps:
       - name: Preview deployments controller
         uses: cloudposse/github-action-preview-environment-controller@0.9.0
@@ -131,7 +131,7 @@ jobs:
       destroy_envs: ${{ steps.controller.outputs.destroy_envs }}
 
   deploy:
-    runs-on: ["self-hosted"]
+    runs-on: ["ubuntu-latest"]
     if: ${{ needs.preview.outputs.deploy_envs != '[]'  }}
     strategy:
       matrix:
@@ -293,7 +293,7 @@ jobs:
           echo "webapp-url=${SSM_URL_0}" >> $GITHUB_OUTPUT
 
   cleanup:
-    runs-on: ["self-hosted"]
+    runs-on: ["ubuntu-latest"]
     if: ${{ needs.preview.outputs.destroy_envs != '[]'  }}
     strategy:
       matrix:

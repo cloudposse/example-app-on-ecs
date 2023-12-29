@@ -80,7 +80,7 @@ permissions:
 
 jobs:
   promote:
-    runs-on: ["self-hosted"]
+    runs-on: ["ubuntu-latest"]
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2.2.0
