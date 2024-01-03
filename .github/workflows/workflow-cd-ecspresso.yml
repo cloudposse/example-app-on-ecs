@@ -86,7 +86,7 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: ["self-hosted"]
+    runs-on: ["ubuntu-latest"]
     environment:
       name: ${{ inputs.environment }}
       url: ${{ steps.result.outputs.webapp-url }}
