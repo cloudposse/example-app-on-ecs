@@ -68,33 +68,26 @@ jobs:
     steps:
       - name: Sanitize Organization
         id: lowercase_org
-        uses: cloudposse/github-action-string-transformer@main
+        uses: cloudposse/github-action-string-transformer@0.3.0
         with:
           operation: 'lowercase'
           input-string: ${{ inputs.organization }}
 
       - name: Sanitize Repository
         id: lowercase_repo
-        uses: cloudposse/github-action-string-transformer@main
+        uses: cloudposse/github-action-string-transformer@0.3.0
         with:
           operation: 'lowercase'
           input-string: ${{ inputs.repository }}
 
-      - uses: cloudposse/github-action-secret-outputs@0.1.1
+      - name: Encode Image
+        uses: cloudposse/github-action-secret-outputs@0.1.1
         id: image
         with:
           secret: ${{ secrets.secret-outputs-passphrase }}
           op: encode
           in: ${{ secrets.registry }}/${{ steps.lowercase_org.outputs.output-string }}/${{ steps.lowercase_repo.outputs.output-string }}
-#
-#      - uses: cloudposse/github-action-matrix-outputs-write@0.4.2
-#        id: outputs
-#        with:
-#          matrix-step-name: ${{ inputs.matrix-step-name }}
-#          matrix-key: ${{ inputs.matrix-key }}
-#          outputs: |
-#            image: ${{ steps.image.outputs.out }}
-#
+
     outputs:
       image: ${{ steps.image.outputs.out }}
       lowercase_org: ${{ steps.lowercase_org.outputs.output-string }}
