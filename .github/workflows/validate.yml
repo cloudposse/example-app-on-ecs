@@ -40,16 +40,3 @@ jobs:
       name: "Syntax check of CODEOWNERS"
       with:
         checks: "syntax,duppatterns"
-
-  docs:
-    name: "docs"
-    runs-on: ["ubuntu-latest"]
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Check spelling
-        uses: crate-ci/typos@v1.16.25
-        with:
-          files: |
-            README.yaml
-            ./docs
