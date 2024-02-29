@@ -13,10 +13,6 @@ name: |-
       release:
         types: [published]
   
-    permissions:
-      id-token: write
-      contents: write
-  
     jobs:
       hotfix:
         name: release / branch
@@ -43,14 +39,6 @@ on:
         description: "Release version tag"
         required: true
         type: string
-
-permissions:
-  id-token: write
-  contents: write
-
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
 
 jobs:
   create:

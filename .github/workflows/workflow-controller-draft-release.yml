@@ -28,6 +28,11 @@ on:
         default: ${{ github.sha }}
         type: string
 
+permissions:
+  contents: write
+  id-token: write
+  pull-requests: read
+
 jobs:
   draft:
     runs-on: ["ubuntu-latest"]

@@ -14,12 +14,6 @@ name: |-
         branches: [ 'release/**' ]
         types: [opened, synchronize, reopened, closed, labeled, unlabeled]
     
-    permissions:
-      pull-requests: write
-      deployments: write
-      id-token: write
-      contents: read
-    
     jobs:
       do:
         uses: ./.github/workflows/ecspresso-hotfix-branch.yml
@@ -91,16 +85,6 @@ on:
       ecr-iam-role:
         description: "IAM Role ARN provide ECR write/read access"
         required: true
-
-permissions:
-  pull-requests: write
-  deployments: write
-  id-token: write
-  contents: read
-
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
 
 jobs:
   ci:

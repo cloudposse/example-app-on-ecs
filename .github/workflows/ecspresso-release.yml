@@ -13,10 +13,6 @@ name: |-
       release:
         types: [published]
     
-    permissions:
-      id-token: write
-      contents: write
-    
     jobs:
       perform:
         uses: ./.github/workflows/ecspresso-release.yml
@@ -76,14 +72,6 @@ on:
       ecr-iam-role:
         description: "IAM Role ARN provide ECR write/read access"
         required: true
-
-permissions:
-  id-token: write
-  contents: write
-
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
 
 jobs:
   ci:

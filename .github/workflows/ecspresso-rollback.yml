@@ -53,16 +53,7 @@ on:
         description: "IAM Role ARN provide ECR write/read access"
         required: true
 
-permissions:
-  id-token: write
-  contents: write
-
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
-
 jobs:
-
   setup:
     runs-on: ["self-hosted"]
     steps:
