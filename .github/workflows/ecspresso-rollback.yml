@@ -55,7 +55,7 @@ on:
 
 jobs:
   setup:
-    runs-on: ["self-hosted"]
+    runs-on: ["ubuntu-latest"]
     steps:
       - name: Sanitize Organization
         id: lowercase_org
