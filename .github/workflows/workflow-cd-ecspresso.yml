@@ -99,7 +99,7 @@ jobs:
           in: ${{ inputs.image }}
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: config
         uses: blablacar/action-config-levels@dc8ddbca36875e29f870e53bcc1160b7000ff5b2
