@@ -106,7 +106,7 @@ jobs:
           operation: 'lowercase'
           input-string: ${{ inputs.organization }}
       
-      - uses: cloudposse/github-action-docker-promote@0.1.1
+      - uses: cloudposse/github-action-docker-promote@0.3.0
         id: promote
         with:
           registry: ${{ secrets.registry }}
