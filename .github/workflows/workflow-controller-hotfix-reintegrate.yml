@@ -37,6 +37,12 @@ on:
       github-private-actions-pat:
         description: "Github PAT allow to create a pull request"
         required: true
+
+permissions:
+  contents: write
+  id-token: write
+  pull-request: read
+
 jobs:
   changes:
     runs-on: ["ubuntu-latest"]

@@ -298,11 +298,6 @@ jobs:
     strategy:
       matrix:
         env: ${{ fromJson(needs.preview.outputs.destroy_envs) }}
-    permissions:
-      pull-requests: write
-      deployments: write
-      id-token: write
-      contents: read
     needs: [ preview ]
     steps:
       - uses: cloudposse/github-action-secret-outputs@0.1.1
