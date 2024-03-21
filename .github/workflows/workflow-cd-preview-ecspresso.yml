@@ -108,7 +108,7 @@ on:
 permissions:
   pull-requests: write
   deployments: write
-  id-token: read
+  id-token: write
   contents: read
 
 jobs:
