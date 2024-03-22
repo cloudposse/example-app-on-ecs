@@ -17,6 +17,7 @@ jobs:
       open: ${{ github.event.pull_request.state == 'open' }}
       labels: ${{ toJSON(github.event.pull_request.labels.*.name) }}
       ref: ${{ github.event.pull_request.head.ref  }}
+      app: "example-${{ github.event.repository.name }}"
       # enable-migration: false # defaults to false
       # support-rollback: false # defaults to false
     secrets:

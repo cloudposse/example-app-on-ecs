@@ -69,6 +69,10 @@ on:
         type: boolean
         required: false
         default: false
+      app:
+        description: "Application name. Used with monorepo pattern when there are several applications in the repo"
+        required: false
+        type: string
     secrets:
       secret-outputs-passphrase:
         description: "Passphrase to encrypt/decrypt secret outputs with gpg. For more information [read](https://github.com/cloudposse/github-action-secret-outputs)"
@@ -112,6 +116,7 @@ jobs:
       enable-migration: ${{ inputs.enable-migration }}
       support-rollback: ${{ inputs.support-rollback }}
       exclusive: true
+      app: ${{ inputs.app }}
       env-label: |
         hotfix: deploy
     secrets:
