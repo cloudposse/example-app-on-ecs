@@ -2,5 +2,5 @@
 #environment-info-org: cloudposse
 environment-info-repo: infra-config
 implementation_path: .github/environments
-implementation_file: ecspresso.yaml
+implementation_file: ecspresso.yml
 implementation_ref: main
