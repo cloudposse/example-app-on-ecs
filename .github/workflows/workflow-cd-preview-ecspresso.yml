@@ -172,7 +172,7 @@ jobs:
         uses: cloudposse/github-action-interface-environment@0.3.0
         id: environment
         with:
-          implementation_repository: "${{ github.event.repository.owner.login }}/${{ steps.config.outputs.environment-info-repo }}"
+          implementation_repository: "${{ steps.config.outputs.environment-info-org || github.event.repository.owner.login }}/${{ steps.config.outputs.environment-info-repo }}"
           implementation_path: ${{ steps.config.outputs.implementation_path }}
           implementation_file: ${{ steps.config.outputs.implementation_file }}
           implementation_ref: ${{ steps.config.outputs.implementation_ref }}
@@ -339,7 +339,7 @@ jobs:
         uses: cloudposse/github-action-interface-environment@0.3.0
         id: environment
         with:
-          implementation_repository: "${{ github.event.repository.owner.login }}/${{ steps.config.outputs.environment-info-repo }}"
+          implementation_repository: "${{ steps.config.outputs.environment-info-org || github.event.repository.owner.login }}/${{ steps.config.outputs.environment-info-repo }}"
           implementation_path: ${{ steps.config.outputs.implementation_path }}
           implementation_file: ${{ steps.config.outputs.implementation_file }}
           implementation_ref: ${{ steps.config.outputs.implementation_ref }}
