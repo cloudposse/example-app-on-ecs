@@ -1,4 +1,5 @@
 # assumes the same organization 
+environment-info-org: cloudposse
 environment-info-repo: infra-live
 implementation_path: .github/environments
 implementation_file: ecspresso.yaml
