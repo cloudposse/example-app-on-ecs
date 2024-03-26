@@ -44,9 +44,10 @@ description: |-
   Example Dockerized application deployed on ECS.
 
 usage: |-
-We've consolidated all the workflows, including the shared/reusable GitHub reusable workflows. We've done this to make it easier for Developers to understand how the example leverages all the workflows.  In practice, we recommend moving the reusable workflows into a centralized repository, where they can be shared by other application repositories. For example, from this example, we would recommend moving all the `ecspresso-*` and all `workflow-*` workflow files to a centralized repository (e.g. a repository named `github-action-workflows`). The best solution will depend on your GitHub organization structure and team size. Pick what works for you and your team.
+  We've consolidated all the workflows, including the shared/reusable GitHub reusable workflows. We've done this to make it easier for Developers to understand how the example leverages all the workflows.  In practice, we recommend moving the reusable workflows into a centralized repository, where they can be shared by other application repositories. For example, from this example, we would recommend moving all the `ecspresso-*` and all `workflow-*` workflow files to a centralized repository (e.g. a repository named `github-action-workflows`). The best solution will depend on your GitHub organization structure and team size. Pick what works for you and your team.
   
   When your workflows are consolidated, you will need only 3 inside this repository:
+  
   1. feature-branch.yml
   2. main-branch.yml
   3. release.yml
