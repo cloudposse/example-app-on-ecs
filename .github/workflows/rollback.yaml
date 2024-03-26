@@ -23,6 +23,7 @@ jobs:
       environments: '["staging", "production"]'
       enable-migration: false
       support-rollback: false
+      app: "example-${{ github.event.repository.name }}"
     secrets:
       github-private-actions-pat: "${{ secrets.PUBLIC_AND_PRIVATE_REPO_ACCESS_TOKEN_REPO }}"
       registry: "${{ secrets.ECR_REGISTRY }}"
